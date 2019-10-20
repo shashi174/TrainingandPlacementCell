@@ -19,15 +19,15 @@ mongoose.connect('mongodb://priyam:priyam123@ds046667.mlab.com:46667/priyam-gupt
 app.set('view engine', 'hbs');
 app.use(express.static('views'));
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => {                        // Renders Home Page
     res.render('index');
 })
 
-app.get('/addcompany', (req, res) => {
+app.get('/addcompany', (req, res) => {              // Company Form Page    
     res.render('addcompany');
 })
 
-app.post('/addcompany', (req, res) => {
+app.post('/addcompany', (req, res) => {             // POST Request to save data of Company
     var newComp = new Company(req.body);
     console.log(req.body, newComp)
     newComp.save().then(comp => {
