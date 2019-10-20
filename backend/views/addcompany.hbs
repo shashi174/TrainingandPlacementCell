@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/recruitersregister.css">
+	<title>Register</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand ml-5" href="index.html">Training & Placement Cell</a>
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+
+				<li class="nav-item">
+					<a class="nav-link" href="placements.html">Placements</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="internships.html">Internships</a>
+        </li>
+
+        <li class="nav-item">
+					<a class="nav-link" href="presentRecruiters.html">Present Recruiters</a>
+				</li>
+			
+			</ul>
+
+		</div>
+	</nav>
+
+<div class="container my-5">
+  <p class="lead text-muted">Register here to recruit students from NITH through campus placements.</p>
+  <div class="card">
+    <div class="card-body">
+      <form action="/addcompany" method="POST">
+        <div class="form-group">
+          <h5>About Organization</h5><br>
+          <label for="nameorg">NAME OF ORGANIZATION:</label>
+          <input name="name" type="text" class="form-control" id="nameorg">
+        </div>
+        <div class="form-group">
+          <label for="address">POSTAL ADDRESS:</label>
+          <input name="address" type="text" class="form-control" id="address">
+        </div>
+        <div class="form-group">
+          <label for="website">WEBSITE:</label>
+          <input name="website" type="url" class="form-control" id="website">
+        </div>
+        <div class="form-group">
+          <label for="typeoforganization">TYPE OF ORGANIZATION:</label>
+          <input name="type" type="text" class="form-control" id="typeoforganization">
+        </div><br>
+        <h5>Contact Details</h5>
+        <h5 class="lead">HEAD HR:</h5><br>
+        <div class="form-group">
+          <label for="hrname">NAME:</label>
+          <input type="text" name="hrname" class="form-control" id="hrname">
+        </div>
+        <div class="form-group">
+          <label for="hremail">EMAIL:</label>
+          <input type="email" name="hremail" class="form-control" id="hremail">
+        </div>
+        <div class="form-group">
+          <label for="hrmobile">MOBILE:</label>
+          <input type="number" name="hrmobile" class="form-control" id="hrmobile">
+        </div>
+        <!-- <div class="form-group">
+          <label for="hrlandline">LANDLINE:</label>
+          <input type="number" class="form-control" id="hrlandline">
+        </div>
+        <div class="form-group">
+          <label for="hrfax">FAX:</label>
+          <input type="number" class="form-control" id="hrfax">
+        </div> -->
+        <input type="submit" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
