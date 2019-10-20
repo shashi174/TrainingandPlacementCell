@@ -1,0 +1,25 @@
+.navbar-expand-lg{
+  background-color: #584b4f;
+}
+
+.nav-link{
+  color: white;
+}
+
+.nav-link:hover{
+  color: white;
+}
+
+.navbar-brand{
+  color:white;
+}
+
+
+.navbar-brand:hover{
+  color:white;
+}
+
+
+.page-footer{
+	background-color: #584b4f;
+}
