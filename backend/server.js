@@ -12,16 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 // var jsonParser = bodyParser.json();
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://PriyamEx:<password>@priyam-raqvc.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
-mongoose.connect('mongodb+srv://PriyamEx:muskaanpriyam@priyam-raqvc.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true} ,() => {
+mongoose.connect('mongodb://priyam:priyam123@ds046667.mlab.com:46667/priyam-gupta', {useNewUrlParser: true, useUnifiedTopology: true} ,() => {
     console.log('DB Connected')
 });
 

@@ -14,7 +14,7 @@ Steps to upload your code:
 
 > git remote add origin https://github.com/Priyam-29/TrainingandPlacementCell
 
-> git pull origin master
+> git pull origin master --allow-unrelated-histories
 
 > git push origin master
 
