@@ -32,8 +32,16 @@ app.post('/addcompany', (req, res) => {             // POST Request to save data
     console.log(req.body, newComp)
     newComp.save().then(comp => {
         console.log(comp);
-        res.send('Ok')
+        res.redirect('/')
     }).catch(e => res.send(e));    
+})
+
+app.get('/placements', (req, res) => {              // Renders Placements Page
+    res.render('placements');
+})
+
+app.get('/internships', (req, res) => {              // Renders Internships Page
+    res.render('internships');
 })
 
 app.listen(3000, () => {
