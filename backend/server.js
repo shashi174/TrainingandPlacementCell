@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 // var jsonParser = bodyParser.json();
 
-mongoose.connect('mongodb://priyam:priyam123@ds046667.mlab.com:46667/priyam-gupta', {useNewUrlParser: true, useUnifiedTopology: true} ,() => {
+mongoose.connect('mongodb://localhost:27017/priyam-gupta', {useNewUrlParser: true, useUnifiedTopology: true} ,() => {
     console.log('DB Connected')
 });
 
@@ -44,6 +44,16 @@ app.get('/internships', (req, res) => {              // Renders Internships Page
     res.render('internships');
 })
 
-app.listen(3000, () => {
-    console.log('Port Up');
+app.get('/presentRecruiters', (req, res) => {              // Renders Internships Page
+    res.render('presentRecruiters');
+})
+
+app.get('/admin', (req, res) => {              // Renders Admin login Page
+    res.render('admin');
+})
+
+var port = 4300;
+
+app.listen(port, () => {
+    console.log('Port Up' + port);
 })
