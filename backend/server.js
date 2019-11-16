@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
+const passport = require('passport');
 const Company = require('./models/Company')
 
 var app = express();
@@ -10,7 +11,11 @@ app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({ extended: true}));
 
+app.use('/auth',require('./routes/auth'));
+
 // var jsonParser = bodyParser.json();
+
+require('./config/passport')(passport);
 
 mongoose.connect('mongodb://priyam:priyam123@ds046667.mlab.com:46667/priyam-gupta', {useNewUrlParser: true, useUnifiedTopology: true} ,() => {
     console.log('DB Connected')
@@ -38,11 +43,11 @@ app.post('/addcompany', (req, res) => {             // POST Request to save data
 
 app.get('/placements', (req, res) => {              // Renders Placements Page
     res.render('placements');
-})
+});
 
 app.get('/internships', (req, res) => {              // Renders Internships Page
     res.render('internships');
-})
+});
 
 app.listen(3000, () => {
     console.log('Port Up');
