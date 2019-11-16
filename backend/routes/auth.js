@@ -12,7 +12,7 @@ router.get('/login', (req, res) => {
     if (req.user) {
         return res.redirect('/dashboard');
     }
-    return res.render('index', { req, next: req.query.next })
+    return res.render('login', { req, next: req.query.next })
 });
 
 router.get('/register', (req, res) => {
@@ -71,6 +71,7 @@ router.post('/register', (req, res) => {
 
 // Handling Login
 router.post('/login', (req, res, next) => {
+    console.log(req.body)
     passport.authenticate('local', {
         successRedirect: req.query.next ? (req.query.next.startsWith(req.headers.host) ? req.query.next.substring(req.headers.host.length, req.query.next.length) : '/dashboard') : '/dashboard',
         failureRedirect: '/auth/login' + (req.query.next ? `?next=${req.query.next}` : ''),

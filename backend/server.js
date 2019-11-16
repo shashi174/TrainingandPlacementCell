@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({ extended: true}));
 
-app.use('/auth',require('./routes/auth'));
-
 // var jsonParser = bodyParser.json();
 
 require('./config/passport')(passport);
@@ -23,6 +21,11 @@ mongoose.connect('mongodb://localhost:27017/priyam-gupta', {useNewUrlParser: tru
 
 app.set('view engine', 'hbs');
 app.use(express.static('views'));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/auth',require('./routes/auth'));
 
 app.get('/', (req, res) => {                        // Renders Home Page
     res.render('index');
@@ -51,10 +54,6 @@ app.get('/internships', (req, res) => {              // Renders Internships Page
 
 app.get('/presentRecruiters', (req, res) => {              // Renders Internships Page
     res.render('presentRecruiters');
-})
-
-app.get('/admin', (req, res) => {              // Renders Admin login Page
-    res.render('admin');
 })
 
 var port = 4300;
