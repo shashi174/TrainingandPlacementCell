@@ -8,7 +8,7 @@ module.exports = function(passport) {
     passport.use(
         new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
             // Match User
-            User.findOne({ email, verified: true })
+            User.findOne({ email })
                 .then(user => {
                     if (!user) {
                         return done(null, false, { message: 'Email or password is incorrect or user is not verified' });
