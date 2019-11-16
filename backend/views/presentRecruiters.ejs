@@ -40,7 +40,27 @@
 		</div>
 </nav>
 <div class="container my-5">
-  
+		<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Name</th>
+					<th scope="col">Address</th>
+					<th scope="col">Website</th>
+					<th scope="col">Type</th>
+				  </tr>
+				</thead>
+				<tbody>
+					<% companies.forEach(company => { %>
+						<tr>
+						  <th scope="row"><%= company.name %></th>
+						  <td><%= company.address %></td>
+						  <td><%= company.website %></td>
+						  <td><%= company.type %></td>
+						</tr>
+						
+					<%}); %>
+				</tbody>
+			  </table>
 </div>
 </body>
 </html>

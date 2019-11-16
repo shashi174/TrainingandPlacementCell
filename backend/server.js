@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/priyam-gupta', {useNewUrlParser: tru
     console.log('DB Connected')
 });
 
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 app.use(express.static('views'));
 
 app.use(passport.initialize());
@@ -53,7 +53,9 @@ app.get('/internships', (req, res) => {              // Renders Internships Page
 });
 
 app.get('/presentRecruiters', (req, res) => {              // Renders Internships Page
-    res.render('presentRecruiters');
+    Company.find().then((companies) => {
+        res.render('presentRecruiters' ,{companies});
+    }).catch(err => console.log(err));
 })
 
 var port = 4300;
