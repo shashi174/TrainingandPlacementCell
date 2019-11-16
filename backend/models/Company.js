@@ -11,6 +11,10 @@ const CompanySchema = new mongoose.Schema({
     	type: String,
     	required: true
     },
+    verified: {
+        type: Boolean,
+        default: false
+    },
     hrname: String,
     hremail: String,
     hrmobile: String
