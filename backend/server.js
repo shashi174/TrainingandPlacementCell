@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const passport = require('passport');
 const Company = require('./models/Company')
 
+const {sendEmail} = require('./middlewares/emailService')
+
 var app = express();
 
 app.use(bodyParser.json());
@@ -27,7 +29,7 @@ app.use(passport.session());
 
 app.use('/auth',require('./routes/auth'));
 
-app.get('/', (req, res) => {                        // Renders Home Page
+app.get('/', (req, res) => {                       // Renders Home Page
     res.render('index');
 })
 
@@ -54,6 +56,7 @@ app.get('/internships', (req, res) => {              // Renders Internships Page
 
 app.get('/presentRecruiters', (req, res) => {              // Renders Internships Page
     Company.find().then((companies) => {
+        console.log(companies)
         res.render('presentRecruiters' ,{companies});
     }).catch(err => console.log(err));
 })

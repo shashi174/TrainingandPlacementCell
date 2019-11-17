@@ -11,6 +11,7 @@ const CompanySchema = new mongoose.Schema({
     	type: String,
     	required: true
     },
+    interviewDate: Date,
     verified: {
         type: Boolean,
         default: false

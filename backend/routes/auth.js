@@ -5,19 +5,21 @@ const passport = require('passport');
 
 //Models
 const User = require('../models/user');
+const Company = require('../models/Company')
 
-const { sendEmail } = require('../config/emailService');
+const { sendEmail } = require('../middlewares/emailService');
+const sendMailToPeople = require('../middlewares/sendMailToPeople')
 
 router.get('/login', (req, res) => {
     if (req.user) {
-        return res.redirect('/dashboard');
+        return res.redirect('/auth/dashboard');
     }
     return res.render('login', { req, next: req.query.next })
 });
 
 router.get('/register', (req, res) => {
     if (req.user) {
-        return res.redirect('/dashboard');
+        return res.redirect('/auth/dashboard');
     }
     return res.render('register', { req })
 });
@@ -73,7 +75,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res, next) => {
     console.log(req.body)
     passport.authenticate('local', {
-        successRedirect: req.query.next ? (req.query.next.startsWith(req.headers.host) ? req.query.next.substring(req.headers.host.length, req.query.next.length) : '/dashboard') : '/dashboard',
+        successRedirect: req.query.next ? (req.query.next.startsWith(req.headers.host) ? req.query.next.substring(req.headers.host.length, req.query.next.length) : '/auth/dashboard') : '/auth/dashboard',
         failureRedirect: '/auth/login' + (req.query.next ? `?next=${req.query.next}` : ''),
         failureFlash: false
     })(req, res, next);
@@ -97,6 +99,20 @@ router.get('/verify', (req, res) => {
         })
         .catch(err => console.log(err));
 });
+
+router.get('/dashboard', (req, res) => {
+    console.log('Request for dashboard')    
+    res.render('index_admin')
+})
+
+router.post('/confirm', (req, res) => {
+    // BODY EXPECTED: {companyId: '', confirm: true/false}
+    console.log('Company Permission Request', req.body)
+    Company.findByIdAndUpdate(req.body.companyId, {verified: req.body.confirm})
+        .then(company => {
+            sendMailToPeople(company, req.body.confirm);
+        })
+})
 
 // Changing Password on email link click
 router.get('/reset', (req, res) => {

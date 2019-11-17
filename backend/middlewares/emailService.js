@@ -1,4 +1,21 @@
+// const sgMail = require('@sendgrid/mail');
+// const sendMail = () => {
+
+//     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+//     const msg = {
+//     to: 'priyamgupta2911@gmail.com',
+//     from: 'tst@example.com',
+//     subject: 'Sending with Twilio SendGrid is Fun',
+//     text: 'and easy to do anywhere, even with Node.js',
+//     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+//     };
+//     sgMail.send(msg);
+// }
+
+// module.exports = sendMail
 const nodemailer = require('nodemailer');
+
+const {sendgridAPI} = require('../config/keys')
 
 var creatingTransport = () => {
 
@@ -6,7 +23,7 @@ var creatingTransport = () => {
         service: 'SendGrid',
         auth: {
             user: 'apikey',
-            pass: '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'
+            pass: sendgridAPI
         }
     });
 
