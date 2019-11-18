@@ -26,7 +26,7 @@ const sendMailToPeople = (company, confirm) => {
             students.forEach(student => {
                 body = `
                 Dear ${student.name},
-                We are delighted to inform you that ${company.name} will be arriving on campus for recruitment on ${campus.interviewDate}.
+                We are delighted to inform you that ${company.name} will be arriving on campus for recruitment on ${company.interviewDate}.
                 All students are advised to keep their Resumes and other documents ready. All the best!
                 
                 Regards,

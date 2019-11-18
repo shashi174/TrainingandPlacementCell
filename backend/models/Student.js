@@ -12,6 +12,10 @@ const StudentSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    company: {
+        type: String,
+        default: "Not Placed"
+    },
     pan: String
 });
 

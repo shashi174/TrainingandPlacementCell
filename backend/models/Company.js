@@ -16,6 +16,10 @@ const CompanySchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    acionTaken: {
+        type: Boolean,
+        default: false
+    },
     hrname: String,
     hremail: String,
     hrmobile: String

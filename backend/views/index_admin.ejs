@@ -20,19 +20,15 @@
 			<ul class="navbar-nav mr-auto">
 
 				<li class="nav-item">
-					<a class="nav-link" href="/placements">Placements</a>
+					<a class="nav-link" href="/student_admin">Student Database</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="/internships">Internships</a>
+					<a class="nav-link" href="/company_admin">Company Database</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="/presentRecruiters">Present Recruiters</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/auth/login">Login as admin</a>
+					<a class="nav-link" href="/auth/logout">Logout</a>
 				</li>
 			
 			</ul>
@@ -43,7 +39,7 @@
 <div class="container my-5">
 			<div class="row justify-content-md-center">
 				<div class="col-sm-2 text-center">
-					<img class="img-fluid logo"  src = "./img/nith_logo.jpeg" alt="">
+					<img class="img-fluid logo"  src = "/img/nith_logo.jpeg" alt="">
 				</div>
 				<div class="col-sm-10 col-md-auto">
 					<h1 class="display-3 text-center">TRAINING AND PLACEMENT CELL</h1>
@@ -53,22 +49,27 @@
 </div>
 
 <div class="container my-5">
-	<div class="row">
-		<div class="col-sm-4">
-			<div class="card my-4 text-center" id="cardrecruiters">
-				<div class="card-body">
-					<a href="/addcompany"><button class="btn btn-lg btn-primary">EDIT STUDENTS <br> DATABASE</button></a>
-			</div>
-		</div>
-	</div>
+    <div class="card-deck">
+        <div class="card text-center">
+            <div class="card-block">
 
-	<div class="row">
-		<div class="col-sm-4">
-			<div class="card my-4 text-center" id="cardrecruiters">
-				<div class="card-body">
-					<a href="/addcompany"><button class="btn btn-lg btn-primary">EDIT COMPANIES <br> DATABASE</button></a>
+<!-- <div class="container my-5">
+	<div class="row"> -->
+		
+			<!-- <div class="card my-4 text-center" id="cardrecruiters">
+				<div class="card-body"> -->
+					<a href="/student_admin"><button class="btn btn-lg btn-primary">EDIT STUDENTS <br> DATABASE</button></a>
 			</div>
-		</div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-block">
+
+	<!-- <div class="row">
+			<div class="card my-4 text-center" id="cardrecruiters">
+				<div class="card-body"> -->
+					<a href="/company_admin"><button class="btn btn-lg btn-primary">EDIT COMPANIES <br> DATABASE</button></a>
+			</div>
 	</div>
 </div>
 <br>

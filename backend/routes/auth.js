@@ -6,7 +6,10 @@ const passport = require('passport');
 //Models
 const User = require('../models/user');
 const Company = require('../models/Company')
+const Student = require('../models/Student')
 
+
+const ensureAuth = require('../config/auth');
 const { sendEmail } = require('../middlewares/emailService');
 const sendMailToPeople = require('../middlewares/sendMailToPeople')
 
@@ -100,17 +103,19 @@ router.get('/verify', (req, res) => {
         .catch(err => console.log(err));
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', ensureAuth, (req, res) => {
+    console.log(req.user);
     console.log('Request for dashboard')    
     res.render('index_admin')
 })
 
-router.post('/confirm', (req, res) => {
+router.post('/confirm', ensureAuth, (req, res) => {
     // BODY EXPECTED: {companyId: '', confirm: true/false}
     console.log('Company Permission Request', req.body)
-    Company.findByIdAndUpdate(req.body.companyId, {verified: req.body.confirm})
+    Company.findByIdAndUpdate(req.body.companyId, {verified: req.body.confirm, acionTaken: true})
         .then(company => {
             sendMailToPeople(company, req.body.confirm);
+            res.send('OK')
         })
 })
 
@@ -197,5 +202,40 @@ router.post('/forgot', (req, res) => {
             res.redirect('/auth/login', { req, email });
         });
 });
+
+router.get('/updatestudent', ensureAuth, (req, res) => {
+    res.render('updatestudent')
+})
+
+router.post('/updateform', ensureAuth, (req, res) => {
+    // REQ BODY: {roll: ''}
+    console.log(req.body)
+    Student.findOne({roll: req.body.roll}).then(student => {
+        if(!student) {
+            res.send('Student Not Found!')
+        } else {
+            res.render('updateform', {student})
+        }
+    })
+})
+
+router.post('/updatestudent', ensureAuth, (req, res) => {
+    // REQ BODY: Entire student object in the form of schema
+    console.log(req.body)
+    Student.findOneAndUpdate({roll: req.body.roll}, 
+        {
+            name: req.body.name,
+            roll: req.body.roll,
+            email: req.body.email,
+            contact: req.body.contact,
+            pan: req.body.pan,
+            placed: req.body.placed,
+            company: req.body.company
+        }).then(student => {
+            console.log(student)
+            res.redirect('/student_admin')
+        })
+        .catch(e => res.send(e))
+})
 
 module.exports = router;

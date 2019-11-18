@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/updatestudent.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+	<title>Training and Placement Cell</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand ml-5" href="/">Training & Placement Cell</a>
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+
+				<li class="nav-item">
+					<a class="nav-link" href="/student_admin">Student Database</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="/company_admin">Company Database</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="/auth/logout">Logout</a>
+				</li>
+			
+			</ul>
+
+		</div>
+</nav>
+<div class="container my-5 text-center">
+  <h3>Enter the details of the student to be updated</h3>
+    <form action="/auth/updateform" method="post">
+        <label>
+          <p class="label-txt">ROLL NUMBER</p>
+          <input type="text" class="input" id="student_roll" name="roll">
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label>
+        <button type="submit" id="getstudent">Get Student</button>
+      </form>
+</div>
+</body>
+<script>
+  // $('#getstudent').click(function (e) {
+  //   e.preventDefault()
+  //   let roll = $('#student_roll').val()
+  //   $.post('/auth/getstudent', {roll}, function (data) {
+  //     console.log(data)
+  //   })
+  // })
+</script>
+</html>
+

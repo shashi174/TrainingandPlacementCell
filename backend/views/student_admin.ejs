@@ -20,19 +20,15 @@
 			<ul class="navbar-nav mr-auto">
 
 				<li class="nav-item">
-					<a class="nav-link" href="/placements">Placements</a>
+					<a class="nav-link" href="/student_admin">Student Database</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="/internships">Internships</a>
+					<a class="nav-link" href="/company_admin">Company Database</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="/presentRecruiters">Present Recruiters</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/auth/login">Login as admin</a>
+					<a class="nav-link" href="/auth/logout">Logout</a>
 				</li>
 			
 			</ul>
@@ -40,7 +36,35 @@
 		</div>
 </nav>
 <div class="container my-5">
-  
+		<table class="table table-bordered table-hover">
+				<thead class = "thead thead-dark">
+				  <tr>
+						<th scope="col">Name</th>
+						<th scope="col">Roll No</th>
+						<th scope="col">Email</th>
+						<th scope="col">Contact</th>
+						<th scope="col">PAN number</th>
+						<th scope="col">Placed</th>
+						<th scope="col">Company</th>
+				  </tr>
+				</thead>
+				<tbody>
+					<% students.forEach(student => { %>
+						<tr>
+						  <th scope="row"><%= student.name %></th>
+						  <td><%= student.roll %></td>
+						  <td><%= student.email %></td>
+							<td><%= student.contact %></td>
+							<td><%= student.pan %></td>
+							<td><%= student.placed %></td>
+							<td><%= student.company %></td>
+						</tr>
+					<%}); %>
+				</tbody>
+				</table>
+				<div class="container text-center">
+					<a href="/auth/updatestudent"><button class="btn btn-primary center">Update Student Database</button></a>
+				</div>
 </div>
 </body>
 </html>

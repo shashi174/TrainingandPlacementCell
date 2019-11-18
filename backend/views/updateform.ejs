@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/index.css">
+	<title>Training and Placement Cell</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg">
+		<a class="navbar-brand ml-5" href="/">Training & Placement Cell</a>
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+
+				<li class="nav-item">
+					<a class="nav-link" href="/student_admin">Student Database</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="/company_admin">Company Database</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="/auth/logout">Logout</a>
+				</li>
+			
+			</ul>
+
+		</div>
+</nav>
+<div class="container my-3">
+        <form class="form-horizontal" action='/auth/updatestudent' method="POST">
+                <fieldset>
+                  <div id="legend">
+                    <legend class=""></legend>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                      <input type="text" id="username" name="name" value="<%= student.name %>" class="input-xlarge">
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                        <label class="control-label" for="roll">Roll Number</label>
+                        <div class="controls">
+                          <input type="number" id="roll" name="roll" value="<%= student.roll %>" class="input-xlarge">
+                        </div>
+                      </div>    
+               
+                  <div class="control-group">
+                    <label class="control-label" for="email">E-mail</label>
+                    <div class="controls">
+                      <input type="text" id="email" name="email" value="<%= student.email %>" class="input-xlarge">
+                    </div>
+                  </div>
+               
+                  <div class="control-group">
+                    <label class="control-label"  for="contact">Contact</label>
+                    <div class="controls">
+                      <input type="number" id="contact" name="contact" value="<%= student.contact %>" class="input-xlarge">
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                        <label class="control-label"  for="pan">PAN Number</label>
+                        <div class="controls">
+                          <input type="number" id="pan" name="pan" value="<%= student.pan %>" class="input-xlarge">
+                        </div>
+                      </div>
+
+                <div class="control-group">
+                    <label class="control-label"  for="placed">Placed Status</label>
+                    <div class="controls">
+                        <input type="Boolean" id="placed" name="placed" value="<%= student.placed %>" class="input-xlarge">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label"  for="company">Company</label>
+                    <div class="controls">
+                        <input type="string" id="company" name="company" value="<%= student.company %>" class="input-xlarge">
+                    </div>
+                </div>
+               
+                  <div class="control-group">
+                    <div class="controls">
+                        <br>
+                      <button class="btn btn-success">Update</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+</div>
+</body>
+</html>
