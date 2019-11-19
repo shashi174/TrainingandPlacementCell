@@ -50,6 +50,7 @@
             <th scope="col">HR Name</th>
             <th scope="col">HR Email</th>
             <th scope="col">HR Contact</th>
+            <th scope="col">Eligible Students</th>
             <th scope="col">Verification Status</th>
             </tr>
         </thead>
@@ -64,6 +65,11 @@
                     <td><%= company.hrname %></td>
                     <td><%= company.hremail %></td>
                     <td><%= company.hrmobile %></td>
+                    <td>
+                        <div>
+                            <a class="btn btn-primary" href="/auth/showEligibleStudents/<%= company._id %>"> Eligible Students </a>
+                        </div>
+                    </td>
                     <% if(company.acionTaken === true) {%>
                     <% if(company.verified) { %>
                         <td>Confirmed</td>                        

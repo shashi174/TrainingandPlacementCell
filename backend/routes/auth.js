@@ -217,7 +217,19 @@ router.post('/updateform', ensureAuth, (req, res) => {
             res.render('updateform', {student})
         }
     })
-})
+});
+
+router.get('/showEligibleStudents/:id', ensureAuth, (req, res) => {
+    Company.findById(req.params.id)
+    .then(company => {
+        Student.find({branch: {$in: company.branch}, cgpa : {$gte: company.cgpa}})
+        .then(students => {
+            console.log(students);
+            res.render('student_admin', {req, students})
+        })
+    })
+    .catch(err => console.log(err));
+});
 
 router.post('/updatestudent', ensureAuth, (req, res) => {
     // REQ BODY: Entire student object in the form of schema

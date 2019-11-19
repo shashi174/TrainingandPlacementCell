@@ -6,6 +6,7 @@ const StudentSchema = new mongoose.Schema({
     	required: true
     },
     roll: String,
+    branch: String,
     email: String,
     contact: Number,
     placed: {
@@ -16,7 +17,8 @@ const StudentSchema = new mongoose.Schema({
         type: String,
         default: "Not Placed"
     },
-    pan: String
+    pan: String,
+    cgpa: Number
 });
 
 const Student = mongoose.model('Student', StudentSchema);

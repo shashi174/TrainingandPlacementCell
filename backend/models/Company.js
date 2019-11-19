@@ -22,7 +22,13 @@ const CompanySchema = new mongoose.Schema({
     },
     hrname: String,
     hremail: String,
-    hrmobile: String
+    hrmobile: String,
+    branch: [
+        {
+            type: String
+        }
+    ],
+    cgpa: Number
 })
 
 const Company = mongoose.model('Company', CompanySchema);

@@ -40,10 +40,12 @@
 				<thead class = "thead thead-dark">
 				  <tr>
 						<th scope="col">Name</th>
-						<th scope="col">Roll No</th>
+						<th scope="col">Roll</th>
+						<th scope="col">Branch</th>
 						<th scope="col">Email</th>
 						<th scope="col">Contact</th>
-						<th scope="col">PAN number</th>
+						<th scope="col">CGPA</th>
+						<th scope="col">PAN</th>
 						<th scope="col">Placed</th>
 						<th scope="col">Company</th>
 				  </tr>
@@ -53,8 +55,10 @@
 						<tr>
 						  <th scope="row"><%= student.name %></th>
 						  <td><%= student.roll %></td>
+						  <td><%= student.branch %></td>
 						  <td><%= student.email %></td>
 							<td><%= student.contact %></td>
+							<td><%= student.cgpa %></td>
 							<td><%= student.pan %></td>
 							<td><%= student.placed %></td>
 							<td><%= student.company %></td>
