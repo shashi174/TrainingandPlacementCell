@@ -11,9 +11,24 @@ const CompanySchema = new mongoose.Schema({
     	type: String,
     	required: true
     },
+    interviewDate: Date,
+    verified: {
+        type: Boolean,
+        default: false
+    },
+    acionTaken: {
+        type: Boolean,
+        default: false
+    },
     hrname: String,
     hremail: String,
-    hrmobile: String
+    hrmobile: String,
+    branch: [
+        {
+            type: String
+        }
+    ],
+    cgpa: Number
 })
 
 const Company = mongoose.model('Company', CompanySchema);

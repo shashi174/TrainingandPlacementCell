@@ -1,3 +1,12 @@
+form {
+  background: #efefef;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+p{
+  color: lightslategray;
+}
 
 .navbar-expand-lg{
   background-color: #584b4f;
@@ -8,11 +17,11 @@
 }
 
 .nav-link:hover{
-  color: white;
+  color: lightblue;
 }
 
 .navbar-toggler-icon{
-    color: white;
+    color: lightblue;
     font-size: 25px;
     border: 2px solid white;
 }

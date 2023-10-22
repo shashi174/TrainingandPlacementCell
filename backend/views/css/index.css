@@ -6,6 +6,20 @@
 	font-size: 2vw;
 }
 
+.nav-link:hover{
+  color: lightblue;
+}
+
+.navbar-toggler:hover{
+  color: lightblue;
+}
+
+h2{
+  color: darkslategrey;
+  font-family: 'Courier New' ;
+  font-weight: bold;
+}
+
 @media screen and (max-width:577px){
 	img.logo{
 		max-width: 30%;
@@ -37,8 +51,8 @@
 }
 
 
-.navbar-brand:hover{
-  color:white;
+.navbar :hover{
+  color:lightblue;
 }
 
 #recruiterstitle{

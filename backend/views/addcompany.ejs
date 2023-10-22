@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/recruitersregister.css">
+	<title>Register</title>
+</head>
+
+<body>
+  <% include ./partials/navbar.ejs %>
+
+<div class="container my-5">
+  <p class="lead text-muted">Register here to recruit students from NITH through campus placements.</p>
+  <div class="card">
+    <div class="card-body">
+      <form action="/addcompany" method="POST">
+        <div class="form-group">
+          <h5> <strong> About Organization : </strong></h5><br>
+          <label for="nameorg">NAME OF ORGANIZATION</label>
+          <input name="name" type="text" class="form-control" autocomplete="off" id="nameorg">
+        </div>
+        <div class="form-group">
+          <label for="address">POSTAL ADDRESS</label>
+          <input name="address" type="text" class="form-control" autocomplete="off" id="address">
+        </div>
+        <div class="form-group">
+          <label for="website">WEBSITE</label>
+          <input name="website" type="url" class="form-control" autocomplete="off" id="website">
+        </div>
+
+        <div class="form-group">
+          <label for="typeoforganization">TYPE OF ORGANIZATION</label>
+          <input name="type" type="text" class="form-control" autocomplete="off" id="typeoforganization">
+        </div>
+
+      <div class="form-group">
+          <label for="date for recruitment">TENTATIVE DATE FOR RECRUITMENT</label>
+          <input name="interviewDate" type="date" class="form-control" autocomplete="off" id="date">
+        </div>
+
+        <br>
+        <br>
+        <h5> <strong>Head HR Contact Details :</strong> </h5>
+        <div class="form-group">
+          <label for="hrname">NAME</label>
+          <input type="text" name="hrname" class="form-control" autocomplete="off" id="hrname">
+        </div>
+        <div class="form-group">
+          <label for="hremail">EMAIL</label>
+          <input type="email" name="hremail" class="form-control" autocomplete="off" id="hremail">
+        </div>
+        <div class="form-group">
+          <label for="hrmobile">MOBILE</label>
+          <input type="number" name="hrmobile" class="form-control" autocomplete="off" id="hrmobile">
+        </div>
+        <br><br>
+        <h5> <strong>Students Eligibility Criteria :</strong> </h5>
+
+        <div class="form-group">
+          <fieldset>
+            <label>BRANCHES</label> <br>
+            <input type="checkbox" name="branch" value = "Computer Science" autocomplete="off" id="branch"> Computer Science <br>
+            <input type="checkbox" name="branch" value = "Information Technology" autocomplete="off" id="branch"> Information Technology <br>
+            <input type="checkbox" name="branch" value = "Electrical" autocomplete="off" id="branch"> Electrical <br>
+            <input type="checkbox" name="branch" value = "Electronics and Communication" autocomplete="off" id="branch"> Electronics and Communication <br>
+            <input type="checkbox" name="branch" value = "Mechanical" autocomplete="off" id="branch"> Mechanical <br>
+            <input type="checkbox" name="branch" value = "Civil" autocomplete="off" id="branch"> Civil <br>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label for="cgpa"> MINIMUM CGPA:</label>
+          <input type="number" name="cgpa" class="form-control" autocomplete="off" id="cgpa">
+        </div>
+
+        <input type="submit" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
